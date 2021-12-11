@@ -1,0 +1,13 @@
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\bin\Debug\USB Comand.exe.config
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\bin\Debug\USB Comand.exe
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\bin\Debug\USB Comand.pdb
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\bin\Debug\MaterialSkin.dll
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB Comand.csproj.AssemblyReference.cache
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB Comand.csproj.SuggestedBindingRedirects.cache
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB_Comand.Form1.resources
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB_Comand.Properties.Resources.resources
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB Comand.csproj.GenerateResource.cache
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB Comand.csproj.CoreCompileInputs.cache
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB Comand.csproj.CopyComplete
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB Comand.exe
+C:\Users\janis\c#\GitHub\USB-Comand\USB Comand\obj\Debug\USB Comand.pdb
