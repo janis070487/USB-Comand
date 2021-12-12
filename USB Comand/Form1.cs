@@ -232,5 +232,54 @@ namespace USB_Comand
             }
 
         }
+        //         Objekti ComPortam
+        //________________________________________________________________________
+        private void SendButon_Click(object sender, EventArgs e)
+        {
+           
+            
+                //hh.Text = "janis - " + i;
+                //WR.Text = "janis - " + i;
+                //tt.Text = tt.Text + "Janis - " + i + '\n';
+                WriteComandText.Text = WriteComandText.Text + SendComand.Text + '\n';
+            SendComand.Text = "";
+            
+        }
+
+        private void AddToListButon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void restartButon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ModeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimeStampCexBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LineNumberCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PauseButton_Click(object sender, EventArgs e)
+        {
+
+        }
+        //_____________________________________________________________________
     }
 }

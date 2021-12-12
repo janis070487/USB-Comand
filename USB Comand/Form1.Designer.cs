@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TextBox textBox1;
-            System.Windows.Forms.TextBox textBox2;
-            System.Windows.Forms.TextBox textBox3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.HomeName = new MaterialSkin.Controls.MaterialTabControl();
@@ -50,6 +47,11 @@
             this.DataSpeed = new MaterialSkin.Controls.MaterialComboBox();
             this.ComPort = new MaterialSkin.Controls.MaterialComboBox();
             this.ComName = new System.Windows.Forms.TabPage();
+            this.PlayButton = new MaterialSkin.Controls.MaterialButton();
+            this.PauseButton = new MaterialSkin.Controls.MaterialButton();
+            this.LineNumberCheckbox = new MaterialSkin.Controls.MaterialCheckbox();
+            this.TimeStampCexBox = new MaterialSkin.Controls.MaterialCheckbox();
+            this.ModeListTekst = new MaterialSkin.Controls.MaterialLabel();
             this.ModeList = new MaterialSkin.Controls.MaterialComboBox();
             this.restartButon = new MaterialSkin.Controls.MaterialButton();
             this.TextTimeName = new MaterialSkin.Controls.MaterialLabel();
@@ -57,65 +59,18 @@
             this.TextWriteName = new MaterialSkin.Controls.MaterialLabel();
             this.AddToListButon = new MaterialSkin.Controls.MaterialButton();
             this.SendButon = new MaterialSkin.Controls.MaterialButton();
-            this.WriteComand = new MaterialSkin.Controls.MaterialTextBox();
+            this.SendComand = new MaterialSkin.Controls.MaterialTextBox();
             this.OpenName = new System.Windows.Forms.TabPage();
             this.D3Name = new System.Windows.Forms.TabPage();
             this.ExsportName = new System.Windows.Forms.TabPage();
             this.SetingName = new System.Windows.Forms.TabPage();
-            this.ModeListTekst = new MaterialSkin.Controls.MaterialLabel();
-            this.TimeStampCexBox = new MaterialSkin.Controls.MaterialCheckbox();
-            this.LineNumberCheckbox = new MaterialSkin.Controls.MaterialCheckbox();
-            this.PauseButton = new MaterialSkin.Controls.MaterialButton();
-            this.PlayButton = new MaterialSkin.Controls.MaterialButton();
-            textBox1 = new System.Windows.Forms.TextBox();
-            textBox2 = new System.Windows.Forms.TextBox();
-            textBox3 = new System.Windows.Forms.TextBox();
+            this.WriteComandText = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.ReadComandText = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.TimeText = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.HomeName.SuspendLayout();
             this.UsbName.SuspendLayout();
             this.ComName.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            textBox1.Location = new System.Drawing.Point(50, 121);
-            textBox1.MaximumSize = new System.Drawing.Size(1000, 1000);
-            textBox1.MaxLength = 40;
-            textBox1.MinimumSize = new System.Drawing.Size(390, 300);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            textBox1.ShortcutsEnabled = false;
-            textBox1.Size = new System.Drawing.Size(390, 500);
-            textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            textBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            textBox2.Location = new System.Drawing.Point(464, 121);
-            textBox2.MaximumSize = new System.Drawing.Size(1000, 1000);
-            textBox2.MaxLength = 40;
-            textBox2.MinimumSize = new System.Drawing.Size(390, 300);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            textBox2.ShortcutsEnabled = false;
-            textBox2.Size = new System.Drawing.Size(390, 500);
-            textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            textBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            textBox3.Location = new System.Drawing.Point(874, 121);
-            textBox3.MaximumSize = new System.Drawing.Size(100, 1000);
-            textBox3.MaxLength = 44;
-            textBox3.MinimumSize = new System.Drawing.Size(100, 300);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            textBox3.ShortcutsEnabled = false;
-            textBox3.Size = new System.Drawing.Size(100, 500);
-            textBox3.TabIndex = 5;
             // 
             // imageList1
             // 
@@ -399,6 +354,9 @@
             // 
             // ComName
             // 
+            this.ComName.Controls.Add(this.TimeText);
+            this.ComName.Controls.Add(this.ReadComandText);
+            this.ComName.Controls.Add(this.WriteComandText);
             this.ComName.Controls.Add(this.PlayButton);
             this.ComName.Controls.Add(this.PauseButton);
             this.ComName.Controls.Add(this.LineNumberCheckbox);
@@ -409,12 +367,9 @@
             this.ComName.Controls.Add(this.TextTimeName);
             this.ComName.Controls.Add(this.TextReadName);
             this.ComName.Controls.Add(this.TextWriteName);
-            this.ComName.Controls.Add(textBox3);
-            this.ComName.Controls.Add(textBox2);
-            this.ComName.Controls.Add(textBox1);
             this.ComName.Controls.Add(this.AddToListButon);
             this.ComName.Controls.Add(this.SendButon);
-            this.ComName.Controls.Add(this.WriteComand);
+            this.ComName.Controls.Add(this.SendComand);
             this.ComName.ImageKey = "icons8-search-48.png";
             this.ComName.Location = new System.Drawing.Point(4, 55);
             this.ComName.Name = "ComName";
@@ -422,6 +377,92 @@
             this.ComName.TabIndex = 2;
             this.ComName.Text = "Com port";
             this.ComName.UseVisualStyleBackColor = true;
+            // 
+            // PlayButton
+            // 
+            this.PlayButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PlayButton.Depth = 0;
+            this.PlayButton.DrawShadows = true;
+            this.PlayButton.HighEmphasis = true;
+            this.PlayButton.Icon = null;
+            this.PlayButton.Location = new System.Drawing.Point(996, 537);
+            this.PlayButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.PlayButton.MaximumSize = new System.Drawing.Size(125, 36);
+            this.PlayButton.MinimumSize = new System.Drawing.Size(125, 36);
+            this.PlayButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PlayButton.Name = "PlayButton";
+            this.PlayButton.Size = new System.Drawing.Size(125, 36);
+            this.PlayButton.TabIndex = 15;
+            this.PlayButton.Text = "Play";
+            this.PlayButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.PlayButton.UseAccentColor = false;
+            this.PlayButton.UseVisualStyleBackColor = true;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
+            // 
+            // PauseButton
+            // 
+            this.PauseButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PauseButton.Depth = 0;
+            this.PauseButton.DrawShadows = true;
+            this.PauseButton.HighEmphasis = true;
+            this.PauseButton.Icon = null;
+            this.PauseButton.Location = new System.Drawing.Point(995, 585);
+            this.PauseButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.PauseButton.MaximumSize = new System.Drawing.Size(125, 36);
+            this.PauseButton.MinimumSize = new System.Drawing.Size(125, 36);
+            this.PauseButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.PauseButton.Name = "PauseButton";
+            this.PauseButton.Size = new System.Drawing.Size(125, 36);
+            this.PauseButton.TabIndex = 14;
+            this.PauseButton.Text = "Pause";
+            this.PauseButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.PauseButton.UseAccentColor = false;
+            this.PauseButton.UseVisualStyleBackColor = true;
+            this.PauseButton.Click += new System.EventHandler(this.PauseButton_Click);
+            // 
+            // LineNumberCheckbox
+            // 
+            this.LineNumberCheckbox.AutoSize = true;
+            this.LineNumberCheckbox.Depth = 0;
+            this.LineNumberCheckbox.Location = new System.Drawing.Point(996, 246);
+            this.LineNumberCheckbox.Margin = new System.Windows.Forms.Padding(0);
+            this.LineNumberCheckbox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.LineNumberCheckbox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.LineNumberCheckbox.Name = "LineNumberCheckbox";
+            this.LineNumberCheckbox.Ripple = true;
+            this.LineNumberCheckbox.Size = new System.Drawing.Size(145, 37);
+            this.LineNumberCheckbox.TabIndex = 13;
+            this.LineNumberCheckbox.Text = "Line numbering";
+            this.LineNumberCheckbox.UseVisualStyleBackColor = true;
+            this.LineNumberCheckbox.CheckedChanged += new System.EventHandler(this.LineNumberCheckbox_CheckedChanged);
+            // 
+            // TimeStampCexBox
+            // 
+            this.TimeStampCexBox.AutoSize = true;
+            this.TimeStampCexBox.Depth = 0;
+            this.TimeStampCexBox.Location = new System.Drawing.Point(995, 194);
+            this.TimeStampCexBox.Margin = new System.Windows.Forms.Padding(0);
+            this.TimeStampCexBox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.TimeStampCexBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TimeStampCexBox.Name = "TimeStampCexBox";
+            this.TimeStampCexBox.Ripple = true;
+            this.TimeStampCexBox.Size = new System.Drawing.Size(120, 37);
+            this.TimeStampCexBox.TabIndex = 12;
+            this.TimeStampCexBox.Text = "Time stamp";
+            this.TimeStampCexBox.UseVisualStyleBackColor = true;
+            this.TimeStampCexBox.CheckedChanged += new System.EventHandler(this.TimeStampCexBox_CheckedChanged);
+            // 
+            // ModeListTekst
+            // 
+            this.ModeListTekst.AutoSize = true;
+            this.ModeListTekst.Depth = 0;
+            this.ModeListTekst.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ModeListTekst.Location = new System.Drawing.Point(1038, 92);
+            this.ModeListTekst.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ModeListTekst.Name = "ModeListTekst";
+            this.ModeListTekst.Size = new System.Drawing.Size(41, 19);
+            this.ModeListTekst.TabIndex = 11;
+            this.ModeListTekst.Text = "Mode";
             // 
             // ModeList
             // 
@@ -443,6 +484,7 @@
             this.ModeList.Name = "ModeList";
             this.ModeList.Size = new System.Drawing.Size(121, 49);
             this.ModeList.TabIndex = 10;
+            this.ModeList.SelectedIndexChanged += new System.EventHandler(this.ModeList_SelectedIndexChanged);
             // 
             // restartButon
             // 
@@ -463,6 +505,7 @@
             this.restartButon.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.restartButon.UseAccentColor = false;
             this.restartButon.UseVisualStyleBackColor = true;
+            this.restartButon.Click += new System.EventHandler(this.restartButon_Click);
             // 
             // TextTimeName
             // 
@@ -519,6 +562,7 @@
             this.AddToListButon.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.AddToListButon.UseAccentColor = false;
             this.AddToListButon.UseVisualStyleBackColor = true;
+            this.AddToListButon.Click += new System.EventHandler(this.AddToListButon_Click);
             // 
             // SendButon
             // 
@@ -539,25 +583,26 @@
             this.SendButon.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.SendButon.UseAccentColor = false;
             this.SendButon.UseVisualStyleBackColor = true;
+            this.SendButon.Click += new System.EventHandler(this.SendButon_Click);
             // 
-            // WriteComand
+            // SendComand
             // 
-            this.WriteComand.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.WriteComand.Depth = 0;
-            this.WriteComand.Font = new System.Drawing.Font("Roboto", 12F);
-            this.WriteComand.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.WriteComand.Location = new System.Drawing.Point(50, 35);
-            this.WriteComand.MaxLength = 40;
-            this.WriteComand.MinimumSize = new System.Drawing.Size(500, 50);
-            this.WriteComand.MouseState = MaterialSkin.MouseState.OUT;
-            this.WriteComand.Multiline = false;
-            this.WriteComand.Name = "WriteComand";
-            this.WriteComand.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.WriteComand.ShortcutsEnabled = false;
-            this.WriteComand.Size = new System.Drawing.Size(500, 50);
-            this.WriteComand.TabIndex = 0;
-            this.WriteComand.Text = "";
-            this.WriteComand.UseTallSize = false;
+            this.SendComand.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SendComand.Depth = 0;
+            this.SendComand.Font = new System.Drawing.Font("Roboto", 12F);
+            this.SendComand.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SendComand.Location = new System.Drawing.Point(50, 35);
+            this.SendComand.MaxLength = 40;
+            this.SendComand.MinimumSize = new System.Drawing.Size(500, 50);
+            this.SendComand.MouseState = MaterialSkin.MouseState.OUT;
+            this.SendComand.Multiline = false;
+            this.SendComand.Name = "SendComand";
+            this.SendComand.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.SendComand.ShortcutsEnabled = false;
+            this.SendComand.Size = new System.Drawing.Size(500, 50);
+            this.SendComand.TabIndex = 0;
+            this.SendComand.Text = "";
+            this.SendComand.UseTallSize = false;
             // 
             // OpenName
             // 
@@ -591,7 +636,10 @@
             // 
             // SetingName
             // 
+            this.SetingName.AutoScroll = true;
+            this.SetingName.ForeColor = System.Drawing.Color.Red;
             this.SetingName.ImageKey = "icons8-settings-48.png";
+            this.SetingName.ImeMode = System.Windows.Forms.ImeMode.On;
             this.SetingName.Location = new System.Drawing.Point(4, 55);
             this.SetingName.Name = "SetingName";
             this.SetingName.Size = new System.Drawing.Size(1242, 641);
@@ -599,87 +647,58 @@
             this.SetingName.Text = "  Seting";
             this.SetingName.UseVisualStyleBackColor = true;
             // 
-            // ModeListTekst
+            // WriteComandText
             // 
-            this.ModeListTekst.AutoSize = true;
-            this.ModeListTekst.Depth = 0;
-            this.ModeListTekst.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.ModeListTekst.Location = new System.Drawing.Point(1038, 92);
-            this.ModeListTekst.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ModeListTekst.Name = "ModeListTekst";
-            this.ModeListTekst.Size = new System.Drawing.Size(41, 19);
-            this.ModeListTekst.TabIndex = 11;
-            this.ModeListTekst.Text = "Mode";
+            this.WriteComandText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.WriteComandText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.WriteComandText.Depth = 0;
+            this.WriteComandText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.WriteComandText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.WriteComandText.Hint = "";
+            this.WriteComandText.Location = new System.Drawing.Point(50, 122);
+            this.WriteComandText.MaximumSize = new System.Drawing.Size(390, 500);
+            this.WriteComandText.MaxLength = 44;
+            this.WriteComandText.MinimumSize = new System.Drawing.Size(390, 500);
+            this.WriteComandText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.WriteComandText.Name = "WriteComandText";
+            this.WriteComandText.Size = new System.Drawing.Size(390, 500);
+            this.WriteComandText.TabIndex = 16;
+            this.WriteComandText.Text = "";
             // 
-            // TimeStampCexBox
+            // ReadComandText
             // 
-            this.TimeStampCexBox.AutoSize = true;
-            this.TimeStampCexBox.Depth = 0;
-            this.TimeStampCexBox.Location = new System.Drawing.Point(995, 194);
-            this.TimeStampCexBox.Margin = new System.Windows.Forms.Padding(0);
-            this.TimeStampCexBox.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.TimeStampCexBox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.TimeStampCexBox.Name = "TimeStampCexBox";
-            this.TimeStampCexBox.Ripple = true;
-            this.TimeStampCexBox.Size = new System.Drawing.Size(120, 37);
-            this.TimeStampCexBox.TabIndex = 12;
-            this.TimeStampCexBox.Text = "Time stamp";
-            this.TimeStampCexBox.UseVisualStyleBackColor = true;
+            this.ReadComandText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ReadComandText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ReadComandText.Depth = 0;
+            this.ReadComandText.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ReadComandText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ReadComandText.Hint = "";
+            this.ReadComandText.Location = new System.Drawing.Point(460, 122);
+            this.ReadComandText.MaximumSize = new System.Drawing.Size(390, 500);
+            this.ReadComandText.MaxLength = 44;
+            this.ReadComandText.MinimumSize = new System.Drawing.Size(390, 500);
+            this.ReadComandText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ReadComandText.Name = "ReadComandText";
+            this.ReadComandText.Size = new System.Drawing.Size(390, 500);
+            this.ReadComandText.TabIndex = 17;
+            this.ReadComandText.Text = "";
             // 
-            // LineNumberCheckbox
+            // TimeText
             // 
-            this.LineNumberCheckbox.AutoSize = true;
-            this.LineNumberCheckbox.Depth = 0;
-            this.LineNumberCheckbox.Location = new System.Drawing.Point(996, 246);
-            this.LineNumberCheckbox.Margin = new System.Windows.Forms.Padding(0);
-            this.LineNumberCheckbox.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.LineNumberCheckbox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.LineNumberCheckbox.Name = "LineNumberCheckbox";
-            this.LineNumberCheckbox.Ripple = true;
-            this.LineNumberCheckbox.Size = new System.Drawing.Size(140, 37);
-            this.LineNumberCheckbox.TabIndex = 13;
-            this.LineNumberCheckbox.Text = "line numbering";
-            this.LineNumberCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // PauseButton
-            // 
-            this.PauseButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PauseButton.Depth = 0;
-            this.PauseButton.DrawShadows = true;
-            this.PauseButton.HighEmphasis = true;
-            this.PauseButton.Icon = null;
-            this.PauseButton.Location = new System.Drawing.Point(995, 585);
-            this.PauseButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.PauseButton.MaximumSize = new System.Drawing.Size(125, 36);
-            this.PauseButton.MinimumSize = new System.Drawing.Size(125, 36);
-            this.PauseButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PauseButton.Name = "PauseButton";
-            this.PauseButton.Size = new System.Drawing.Size(125, 36);
-            this.PauseButton.TabIndex = 14;
-            this.PauseButton.Text = "Pause";
-            this.PauseButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.PauseButton.UseAccentColor = false;
-            this.PauseButton.UseVisualStyleBackColor = true;
-            // 
-            // PlayButton
-            // 
-            this.PlayButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.PlayButton.Depth = 0;
-            this.PlayButton.DrawShadows = true;
-            this.PlayButton.HighEmphasis = true;
-            this.PlayButton.Icon = null;
-            this.PlayButton.Location = new System.Drawing.Point(996, 537);
-            this.PlayButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.PlayButton.MaximumSize = new System.Drawing.Size(125, 36);
-            this.PlayButton.MinimumSize = new System.Drawing.Size(125, 36);
-            this.PlayButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(125, 36);
-            this.PlayButton.TabIndex = 15;
-            this.PlayButton.Text = "Play";
-            this.PlayButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.PlayButton.UseAccentColor = false;
-            this.PlayButton.UseVisualStyleBackColor = true;
+            this.TimeText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.TimeText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TimeText.Depth = 0;
+            this.TimeText.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TimeText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.TimeText.Hint = "";
+            this.TimeText.Location = new System.Drawing.Point(870, 122);
+            this.TimeText.MaximumSize = new System.Drawing.Size(100, 500);
+            this.TimeText.MinimumSize = new System.Drawing.Size(100, 500);
+            this.TimeText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TimeText.Name = "TimeText";
+            this.TimeText.Size = new System.Drawing.Size(100, 500);
+            this.TimeText.TabIndex = 18;
+            this.TimeText.Text = "";
             // 
             // Form1
             // 
@@ -723,7 +742,7 @@
         private MaterialSkin.Controls.MaterialComboBox DataSpeed;
         private MaterialSkin.Controls.MaterialComboBox ComPort;
         private MaterialSkin.Controls.MaterialButton RefreshName;
-        private MaterialSkin.Controls.MaterialTextBox WriteComand;
+        private MaterialSkin.Controls.MaterialTextBox SendComand;
         private MaterialSkin.Controls.MaterialButton AddToListButon;
         private MaterialSkin.Controls.MaterialButton SendButon;
         private MaterialSkin.Controls.MaterialLabel TextTimeName;
@@ -736,6 +755,9 @@
         private MaterialSkin.Controls.MaterialCheckbox LineNumberCheckbox;
         private MaterialSkin.Controls.MaterialButton PlayButton;
         private MaterialSkin.Controls.MaterialButton PauseButton;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox WriteComandText;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox TimeText;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox ReadComandText;
     }
 }
 
