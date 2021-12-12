@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+// main
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
