@@ -1,4 +1,4 @@
-﻿// Tests_Lable
+﻿// Comand_Desing
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
